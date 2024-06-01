@@ -1,0 +1,236 @@
+Чиро ООП мегуянд ва барои чӣ он лозим аст? Дар бораи принсипҳои асосии он нависед.
+ооп ин обектно орентирное програмирование мебошад ва барои бо обектхо  сохтану кор кардан мебошад.
+
+Getter ва setter чист ва чӣ тавр онҳоро истифода мебарем? Дар бораи хусусиятҳо(properties) дар python нависед.
+
+ин  методхо барои бо маълумот кор кадан мебошад ки Getter маълумотро мегирад ва сеттер бошад маълумотро иваз мекунад.
+
+Кадом намуди атрибутҳо ва методҳо дар клас мавҷуданд. 
+
+
+
+
+Дар бораи конструктор ва деструктор нависед.
+конструктор ин колаб  барои сохтани обекти клас мебошад ва деструктор барои бархам додани канструктор мебошад.
+
+
+Фарқият байни тағйирёбандаҳои global, local and nonlocal.
+
+фарки онхо дар диапазони видемосташ мебошад ки глобал дар хамачо дастрас аст ва локал танхо дар територияи дохили худаш.
+нотлокал бошад дар територияи дохили худашу дар територяи клас ё функсияе ки дар он вокеъ аст дастраси пайдо мекунад.
+
+
+Барномае созед ки аз консол 2 рақамро қабул мекунад. Барои ҳар як адади дар ин давр вуҷуддошта ҷадвали зарбашро нишон диҳад.
+### EXAMPLE
+# INPUT
+    From = 2
+    To = 3
+#######
+
+a=int(input())
+b=int(input())
+
+while a<=b:
+    i=0
+    while i < 10:
+        i+=1
+        print(a,"*",i,"=",a*i)
+    print()
+    a+=1
+
+
+    Create a class of Circle with instance variable like radius and class variable like PI(3.14). Then create a constructor which initializes the radius(radius comes as a parameter of constructor).
+Your class should have the following methods:
+Як класи Circle ки аз як тағйирёбандаи ба клас таалуқдошта PI = 3.14 ва як тағйирёбандаи ба обект тааллуқдошта radius ки қиммати он аз конструктор гузошта мешавад созед. Класи Шумо аз методҳои зерин бояд иборат бошад:
+
+1. get_area();               // area = 2 * PI * R * R
+2. get_diametr();           // diameter = 2 * R
+3. get_circumference();      //  circumference  = 2 * PI * R
+4. get_radius();             // radius  = R
+
+
+class circle:
+    pi=3.14
+    def __init__(self, radius):
+        self.radius=radius
+    
+    def area(self):
+         area = 2 * circle.pi * self.radius * self.radius
+         return area
+    
+    
+    def get_diameter(self):
+        diameter = 2 * self.radius
+        return diameter
+    
+    
+    def get_circumference(self):
+        circumference = 2 * circle.pi * self.radius
+        return circumference
+    
+    
+    def get_radius(self):
+        return self.radius
+    
+Circle = circle(5)
+
+
+print("Area:", Circle.area())
+print("Diameter:", Circle.get_diameter())
+print("Circumference:", Circle.get_circumference())
+print("Radius:", Circle.get_radius())
+
+
+
+Create a Calculator class with this static methods:
+Класи Калкуляторро бо методҳои статикии зерин созед:
+1. factorial(n)
+2. power(a, b)
+3. sqrt(n)
+
+
+import math
+
+class Calculator:
+    @staticmethod
+    def factorial(n):
+        if n == 0:
+            return 1
+        else:
+            return n * Calculator.factorial(n-1)
+
+    @staticmethod
+    def power(a, b):
+        return a ** b
+
+    @staticmethod
+    def sqrt(n):
+        return math.sqrt(n)
+
+
+print(Calculator.factorial(5))
+print(Calculator.power(2, 3))
+print(Calculator.sqrt(9))
+
+
+Як класи Calculator созед ки дар конструктор атрибутҳои зеринро дорост. Рақами якум, амал(+, -, *, /) ва рақами дуюм. Калкулятори Шумо баяд 4 амали математикиро иҷро кунад. Берун аз клас як даври беохир(infinite loop) созед. Объекти класи Калкуляторро созед ва рақамҳо ва аломати дохил кардаатонро ба он гузоред. math case - ро барои  даъват кардани методиҳои клас вобаста ба аломати дохилкарда истифода баред.
+
+1.	Create class Calculator 
+2.	Create a constructor which initializes the first number, operation(+, -, *, /) and second number(first num, second num, operation comes as parameter of constructor).
+3.	Create four instance methods like: 
+    Sum()
+    Subtract()
+    Multiplication()
+    Division()
+4.	Create infinite loop outside Calculator class 
+5.	Use the math case block for calling methods
+
+class Calculator:
+    def __init__(self, num1, num2, operation):
+        self.num1 = num1
+        self.num2 = num2
+        self.operation = operation
+
+    def sum(self):
+        return self.num1 + self.num2
+
+    def subtract(self):
+        return self.num1 - self.num2
+
+    def multiplication(self):
+        return self.num1 * self.num2
+
+    def division(self):
+        if self.num2 != 0:
+            return self.num1 / self.num2
+        else:
+            return "Error"
+
+while True:
+    num1 = float(input())
+    operation = input()
+    num2 = float(input())
+
+    calc = Calculator(num1, num2, operation)
+
+    result = 0
+
+    
+    if operation == '+':
+        result = calc.sum()
+    elif operation == '-':
+        result = calc.subtract()
+    elif operation == '*':
+        result = calc.multiplication()
+    elif operation == '/':
+        result = calc.division()
+    else:
+        print("error")
+
+    print("Result= ", result)
+
+
+
+Як барнома созед ки вазифаҳои зеринро иҷро кунад. Регирстратсия, логин, ивази парол, истифодабарандагон.
+Барои ҳалли ин масъала класи User бо атрибутҳои First name, Last name, Username ва Password созед. Ҳамаи атрибутҳо аз конструктор ворид карда шаванд. Класи дигар ки бояд созед ин UserManager ки аз методҳои register(), login(), change_password() ва GetUser() иборат аст.
+    register() -> дар ин метод обекти класи User - ро созед маълумотҳояшро аз консол дохил карда онро ба листи  list_of_users дохил кунед. 
+
+    login() -> дар ин метод бошад санҷед агар истифодабар бо ҳамин логир ва парол дар list_of_users бошад дар консол  Login successful! - ро нишон диҳед ва агар набошад User with this username not found, ё паролаш нодуруст бошад     Password incorrect!
+    
+    change_password() -> дар ин метод истифодабар метавонад бо дохил кардани username, old_password ва new_password паролашро иваз кунад.
+	
+    GetUser() -> ин метод бошад бо як формати хуб ҳамаи маълумотҳои истидабаронро дар консол нишон диҳад.
+
+class User:
+    def __init__(self, first_name, last_name, username, password):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.username = username
+        self.password = password
+
+class UserManager:
+    def __init__(self):
+        self.list_of_users = []
+
+    def register(self):
+        first_name = input("Enter first name: ")
+        last_name = input("Enter last name: ")
+        username = int (input("Enter a username (must be an integer): "))
+        password = int(input("Enter a password (must be an integer): "))
+        user = User(first_name, last_name, username, password)
+        self.list_of_users.append(user)
+
+    def login(self):
+        username = int(input("Enter your username: "))
+        password = int(input("Enter your password: "))
+        for user in self.list_of_users:
+            if user.username == username:
+                if user.password == password:
+                    print("Login successful!")
+                    return
+                else:
+                    print("Password incorrect")
+                    return
+        print("User with this username not found")
+
+    def change_password(self):
+        username = int(input("Enter your username: "))
+        old_password = int(input("Enter your old password: "))
+        new_password = int(input("Enter your new password: "))
+        for user in self.list_of_users:
+            if user.username == username:
+                if user.password == old_password:
+                    user.password = new_password
+                    print("Password changed successfully!")
+                    return
+                else:
+                    print("Old password incorrect")
+                    return
+        print("User with this username not found")
+
+    def get_users(self):
+        return self.list_of_users
+
+
+        
+
